@@ -5,82 +5,37 @@ using UnityEngine.UIElements;
 
 public class PlayerMoveScript : MonoBehaviour
 {
-    Rigidbody rb;
-    Animator  anim;
-    [SerializeField] float moveSpeed = 15.0f;
-    [SerializeField] float jumpPower = 6.5f; //ジャンプ力
+    private Rigidbody rb;
+    private Animator anim;
 
-    Vector3 moveVec;
-    Vector3 jumpVec; //ジャンプする方向
+    [SerializeField] private GameObject mainCamera; //カメラ
+    [SerializeField] private float moveSpeed = 15.0f; //移動速度
+    [SerializeField] private float jumpPower = 6.5f; //ジャンプ力
 
-    float startAngle = 0.0f; //回転開始角度
-    float targetAngle = 90.0f; //回転後角度
+    [HideInInspector] public Vector3 moveVec; //移動ベクトル
+
+    private Vector3 jumpVec; //ジャンプベクトル
+
+    private float radius = 0.16f;
 
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        jumpVec = Vector3.up; //ジャンプの方向
+
     }
 
     void Update()
     {
-        moveVec = new Vector3(0.0f, 0.0f, 0.0f);
-        jumpVec = new Vector3(0.0f, 1.0f, 0.0f); //ジャンプの方向
+        //移動方向の更新
 
-        if (Input.GetKey(KeyCode.A)) //左が入力されたとき
-        {
-            moveVec.x = -1.0f;
+        moveVec = mainCamera.transform.forward * Input.GetAxisRaw("Vertical") +
+                  mainCamera.transform.right * Input.GetAxisRaw("Horizontal");
 
-            startAngle = this.transform.eulerAngles.y;
-            targetAngle = -90.0f;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            moveVec.x = 1.0f;
-
-            startAngle = this.transform.eulerAngles.y;
-            targetAngle = 90.0f;
-        }
-        else
-        {
-            moveVec.x = 0;
-        }
-
-        if (Input.GetKey(KeyCode.W)) //左が入力されたとき
-        {
-            moveVec.z = 1.0f;
-
-            startAngle = this.transform.eulerAngles.y;
-            targetAngle = 0.0f;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            moveVec.z = -1.0f;
-
-            startAngle = this.transform.eulerAngles.y;
-            targetAngle = 180.0f;
-        }
-        else
-        {
-            moveVec.z = 0;
-        }
-
-        Vector3 center = transform.position + Vector3.up * 0.10f;
-        float radius = 0.16f;
-        LayerMask layer = LayerMask.GetMask("Ground");
-        bool isGround = Physics.CheckSphere(center, radius, layer);
-        anim.SetBool("jumping", !isGround);
-
-        if (isGround && Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(jumpVec * jumpPower, ForceMode.Impulse);
-        }
-
-        //現在角度と目標角度から、動くべき角度を求める
-        float angle = Mathf.LerpAngle(startAngle, targetAngle, 1.0f);
-
-        //現在の角度に適用する
-        this.transform.eulerAngles = new Vector3(0.0f, angle, 0.0f);
+        //ベクトルの正規化
+        moveVec = Vector3.Normalize(moveVec);
 
         //歩行アニメーションの切り替え
         if (moveVec != Vector3.zero)
@@ -91,9 +46,28 @@ public class PlayerMoveScript : MonoBehaviour
         {
             anim.SetBool("running", false);
         }
-    }
-    void FixedUpdate()
-    {
+
+        //移動処理
         transform.position += moveVec * moveSpeed * Time.deltaTime;
+
+        //接地判定
+
+        Vector3 center = transform.position + Vector3.up * 0.10f;
+        LayerMask layer = LayerMask.GetMask("Ground");
+        bool isGround = Physics.CheckSphere(center, radius, layer);
+        anim.SetBool("jumping", !isGround);
+
+        //ジャンプ処理
+
+        if (isGround && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(jumpVec * jumpPower, ForceMode.Impulse);
+        }
+    }
+
+    //プレイヤーのアングル取得
+    float GetAngle()
+    {
+        return Mathf.Atan2(moveVec.x, moveVec.z * Mathf.Rad2Deg);
     }
 }
