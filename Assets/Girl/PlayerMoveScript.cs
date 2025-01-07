@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
 public class PlayerMoveScript : MonoBehaviour
@@ -8,31 +9,37 @@ public class PlayerMoveScript : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
 
-    [SerializeField] private GameObject mainCamera; //カメラ
-    [SerializeField] private float moveSpeed = 15.0f; //移動速度
-    [SerializeField] private float jumpPower = 6.5f; //ジャンプ力
+    [SerializeField] private GameObject mainCamera;     //カメラ
+    private CameraManager camManager;
 
-    [HideInInspector] public Vector3 moveVec; //移動ベクトル
+    [SerializeField] private float moveSpeed;      //移動速度
+    [SerializeField] private float jumpPower;      //ジャンプ力
 
-    private Vector3 jumpVec; //ジャンプベクトル
+    [SerializeField] private float jetPower;       //ジェットパワー
+    [SerializeField] private float jetCooldown;    //クールダウン
+    private bool canJet;                           //ジェットできるかどうか
 
-    private float radius = 0.16f;
+    [SerializeField] private float rotationSpeed;  //振り向きスピード
+
+    private bool isGrounded;
 
     void Start()
     {
         
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-        jumpVec = Vector3.up; //ジャンプの方向
+        camManager = mainCamera.GetComponent<CameraManager>();
+        
+        canJet = true;
 
+        isGrounded = true;
     }
 
     void Update()
     {
         //移動方向の更新
-
-        moveVec = mainCamera.transform.forward * Input.GetAxisRaw("Vertical") +
-                  mainCamera.transform.right * Input.GetAxisRaw("Horizontal");
+        Vector3 moveVec = camManager.GetYawVec() * Input.GetAxisRaw("Vertical") +
+                          camManager.GetYawVec(90f) * Input.GetAxisRaw("Horizontal");
 
         //ベクトルの正規化
         moveVec = Vector3.Normalize(moveVec);
@@ -40,6 +47,11 @@ public class PlayerMoveScript : MonoBehaviour
         //歩行アニメーションの切り替え
         if (moveVec != Vector3.zero)
         {
+            Quaternion targetRotation = Quaternion.LookRotation(moveVec);
+            
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
+
+            //歩行アニメーションの切り替え
             anim.SetBool("running", true);
         }
         else
@@ -54,20 +66,27 @@ public class PlayerMoveScript : MonoBehaviour
 
         Vector3 center = transform.position + Vector3.up * 0.10f;
         LayerMask layer = LayerMask.GetMask("Ground");
-        bool isGround = Physics.CheckSphere(center, radius, layer);
-        anim.SetBool("jumping", !isGround);
+        isGrounded = Physics.CheckSphere(center, 0.16f, layer);
+        anim.SetBool("jumping", !isGrounded);
 
         //ジャンプ処理
-
-        if (isGround && Input.GetKeyDown(KeyCode.Space))
+        if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(jumpVec * jumpPower, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
         }
+        
+        //ジェット処理
+        if (Input.GetKeyDown(KeyCode.Mouse1) && canJet)
+            StartCoroutine(JetDash());
+
     }
 
-    //プレイヤーのアングル取得
-    float GetAngle()
+    IEnumerator JetDash()
     {
-        return Mathf.Atan2(moveVec.x, moveVec.z * Mathf.Rad2Deg);
+        canJet = false;
+        rb.AddForce(mainCamera.transform.forward * jetPower, ForceMode.VelocityChange);
+        yield return new WaitForSeconds(jetCooldown);
+        canJet = true;
     }
+
 }

@@ -161,7 +161,9 @@ MonoBehaviour:
   mainCamera: {fileID: 963194225}
   moveSpeed: 5
   jumpPower: 6.5
-  moveVec: {x: 0, y: 0, z: 0}
+  rotationSpeed: 10
+  jetPower: 50
+  jetCooldown: 2
 --- !u!54 &696786558
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -187,7 +189,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &696786559
 CapsuleCollider:
@@ -414,7 +416,6 @@ MonoBehaviour:
   offset: {x: 0, y: 2, z: -5}
   mouseSensitivity: 150
   rotationSmoothTime: 0.03
-  yaw: 0
 --- !u!1 &1764487108
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +519,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -4.49}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -10,7 +10,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] float rotationSmoothTime; // ƒJƒƒ‰‰ñ“]‚ÌƒXƒ€[ƒY‚³
 
     private float pitch = 0f; // ã‰º•ûŒü‚Ì‰ñ“]Šp“x
-    public  float yaw = 0f; // …•½•ûŒü‚Ì‰ñ“]Šp“x
+    private float yaw = 0f; // …•½•ûŒü‚Ì‰ñ“]Šp“x
     private Vector3 currentRotation; // Œ»İ‚ÌƒJƒƒ‰‰ñ“]
     private Vector3 rotationSmoothVelocity; // ‰ñ“]ƒXƒ€[ƒYˆ——p
 
@@ -36,7 +36,17 @@ public class CameraManager : MonoBehaviour
         transform.eulerAngles = currentRotation;
 
         transform.position = target.transform.position + transform.rotation * offset;
+    }
 
-        target.transform.eulerAngles = new Vector3(0, yaw + Mathf.Atan2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * Mathf.Rad2Deg, 0);
+    public float GetYaw()
+    {
+        return yaw; 
+    }
+
+    public Vector3 GetYawVec(float offsetDeg = 0)
+    {
+        float rad = (yaw + offsetDeg) * Mathf.Deg2Rad;
+
+        return new Vector3(Mathf.Sin(rad), 0, Mathf.Cos(rad));
     }
 }
