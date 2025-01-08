@@ -42,38 +42,37 @@ public class CameraManager : MonoBehaviour
 
         //回転角度の更新
         yaw += mouseX;
-
-        Debug.Log(yaw);
-
         pitch -= mouseY;
-        pitch = Mathf.Clamp(pitch, -40f, 80f); // 上下の回転角度を制限
+        pitch = Mathf.Clamp(pitch, -40f, 60f); // 上下の回転角度を制限
 
         //カメラの回転
         Vector3 targetRotation = new Vector3(pitch, yaw);
         currentRotation = Vector3.SmoothDamp(currentRotation, targetRotation, ref rotationVelocity, rotationSmoothTime);
         transform.eulerAngles = currentRotation;
 
-        //目標ポジションの決定
-        Vector3 targetPosition = player.transform.position + transform.rotation * offset;
+        //カメラ移動先の基本ポジションの決定
+        Vector3 standardPosition = player.transform.position + transform.rotation * offset;
 
         //めり込んでいるか判定
 
         Vector3 rayOrigin = player.transform.position + Vector3.up * 0.5f;
+        Vector3 targetPosition;
         RaycastHit hit;
 
-        Debug.DrawRay(rayOrigin, targetPosition - rayOrigin, Color.yellow);
-        if (Physics.SphereCast(rayOrigin, 0.1f, targetPosition - rayOrigin, out hit, distance, checkLayer))
+        Debug.DrawRay(standardPosition, rayOrigin - standardPosition, Color.yellow);
+
+        if (Physics.SphereCast(rayOrigin, 0.15f, standardPosition - rayOrigin, out hit, distance, checkLayer))
         {
-            /////ここが怪しい//////
-            targetPosition += transform.forward * Vector3.Distance(transform.position, hit.point) * 1.1f;
+            targetPosition = Vector3.Lerp(transform.position, hit.point + Vector3.up * 0.1f, 0.05f);
         }
-
-        Debug.DrawRay(rayOrigin, targetPosition - rayOrigin, Color.blue);
-
-
+        else
+        {
+            //めり込んでなければ基本ポジションに移動
+            targetPosition = standardPosition;
+        }
+        
+        //カメラポジションの移動
         transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, moveSmoothTime);
-
-        //transform.position = Vector3.Lerp(transform.position, targetPosition,0.8f);
     }
 
     public float GetYaw()
