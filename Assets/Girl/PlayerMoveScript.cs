@@ -29,6 +29,7 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] private float chargeRate;  //パワーのチャージ速度 (1秒あたりの増加量)
     
     private float currentJetPower = 0f;
+    private bool isJumping = false;
     private bool isCharging = false;
 
     private bool isGrounded;
@@ -83,7 +84,7 @@ public class PlayerMoveScript : MonoBehaviour
         //ジャンプ処理
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+            StartCoroutine(Jump());
         }
 
         //もし地上にいたら
@@ -151,4 +152,20 @@ public class PlayerMoveScript : MonoBehaviour
             StartCoroutine(uiManager.HideJetBar());
         }
     }
+
+    private IEnumerator Jump()
+    {
+        if (isJumping)
+            yield break;
+
+        isJumping = true;
+
+        rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(0.5f);
+
+        isJumping = false;
+
+    }
+
 }
