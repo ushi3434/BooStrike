@@ -35,7 +35,6 @@ public class UIManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(jetBar.GetComponent<CanvasGroup>().alpha);
         //ジェットバー
 
         //ポジション移動

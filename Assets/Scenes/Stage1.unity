@@ -132,6 +132,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1496474530}
     - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
+      propertyPath: moveSmoothTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: checkLayer.m_Bits
       value: 320
       objectReference: {fileID: 0}
@@ -193,6 +197,16 @@ GameObject:
 Camera:
   m_CorrespondingSourceObject: {fileID: 347841774491233091, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
   m_PrefabInstance: {fileID: 15078352}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &15078357 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4554497445182377715, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
+  m_PrefabInstance: {fileID: 15078352}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &75196930 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2959103449886851441, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+  m_PrefabInstance: {fileID: 1496474529}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &151310121
 Mesh:
@@ -1041,7 +1055,7 @@ GameObject:
   - component: {fileID: 1014105512}
   - component: {fileID: 1014105511}
   - component: {fileID: 1014105510}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2265,17 +2279,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3461206919573006387, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 2959103449886851441, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 617f52ba27629044c9710f2689a6e43d, type: 2}
     - target: {fileID: 3748700928085064575, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 3748700928085064575, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4561547246287430085, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2317,6 +2327,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5098131485333683151, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: playerRenderer
+      value: 
+      objectReference: {fileID: 75196930}
+    - target: {fileID: 5098131485333683151, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 15078357}
+    - target: {fileID: 5098131485333683151, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: hantoumeiShader
+      value: 
+      objectReference: {fileID: 4800000, guid: 2864d8c18f8e79843b099a6f8a14446f, type: 3}
+    - target: {fileID: 5098131485333683151, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: originalMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 617f52ba27629044c9710f2689a6e43d, type: 2}
     - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
       propertyPath: UICanvas
       value: 
@@ -2325,11 +2351,8 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 15078353}
-    - target: {fileID: 6812459190362691732, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
-      propertyPath: m_Radius
-      value: 0.38
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5098131485333683151, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

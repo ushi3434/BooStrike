@@ -54,8 +54,6 @@ public class PlayerMoveScript : MonoBehaviour
         //ベクトルの正規化
         moveVec = Vector3.Normalize(moveVec);
 
-        Debug.Log(moveVec);
-
         //もし移動を行っていたら
         if (moveVec != Vector3.zero)
         {
@@ -116,7 +114,6 @@ public class PlayerMoveScript : MonoBehaviour
 
     }
 
-
     private void StartCharging()
     {
         if (isGrounded)
@@ -127,7 +124,6 @@ public class PlayerMoveScript : MonoBehaviour
 
         }
     }
-
     private void ChargePower()
     {
         // パワーを増加 (上限を超えない)

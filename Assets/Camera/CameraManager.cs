@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class CameraManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class CameraManager : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] Vector3 offset;
     [SerializeField] float moveSmoothTime;
+    [SerializeField] float baseFollowSpeed;  // 基本の追従速度
+    [SerializeField] float maxFollowSpeed;   // 最大追従速度
 
     [HeaderAttribute("視点移動設定")]
     [SerializeField] float mouseSensitivity; // マウス感度
@@ -26,8 +29,11 @@ public class CameraManager : MonoBehaviour
 
     private Vector3 moveVelocity;
 
+    private Rigidbody playerRb;
+
     void Start()
     {
+        playerRb = player.GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked; // マウスカーソルをロック
 
         distance = offset.magnitude;
@@ -35,6 +41,9 @@ public class CameraManager : MonoBehaviour
     
     void LateUpdate()
     {
+        float targetSpeed = playerRb.velocity.magnitude;
+        Debug.Log(targetSpeed);
+        float followSpeed = Mathf.Lerp(baseFollowSpeed, maxFollowSpeed, targetSpeed / 30f);
 
         //マウスの移動を取る
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
@@ -63,7 +72,7 @@ public class CameraManager : MonoBehaviour
 
         if (Physics.SphereCast(rayOrigin, 0.15f, standardPosition - rayOrigin, out hit, distance, checkLayer))
         {
-            targetPosition = Vector3.Lerp(transform.position, hit.point + Vector3.up * 0.1f, 0.05f);
+            targetPosition = Vector3.Lerp(transform.position, hit.point + (rayOrigin - hit.point).normalized * 0.5f, 0.2f);
         }
         else
         {
@@ -72,7 +81,8 @@ public class CameraManager : MonoBehaviour
         }
         
         //カメラポジションの移動
-        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, moveSmoothTime);
+        //transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref moveVelocity, moveSmoothTime);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
     }
 
     public float GetYaw()

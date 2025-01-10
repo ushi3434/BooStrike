@@ -14,11 +14,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 530
+      value: 484.47
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,6 +51,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -122,7 +126,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &6812459190362691732
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -142,7 +146,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.21
+  m_Radius: 0.38
   m_Height: 1.48
   m_Direction: 1
   m_Center: {x: 0, y: 0.75, z: 0}
@@ -164,4 +168,4 @@ MonoBehaviour:
   jumpPower: 6.5
   jetPower: 20
   maxJetCharge: 30
-  chargeRate: 15
+  chargeRate: 20
