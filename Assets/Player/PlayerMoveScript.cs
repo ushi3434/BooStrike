@@ -79,7 +79,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         Vector3 center = transform.position + Vector3.up * 0.10f;
         LayerMask layer = LayerMask.GetMask("Ground");
-        isGrounded = Physics.CheckSphere(center, 0.16f, layer);
+        isGrounded = Physics.CheckSphere(center, 0.2f, layer);
 
         //ƒWƒƒƒ“ƒvˆ—
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
