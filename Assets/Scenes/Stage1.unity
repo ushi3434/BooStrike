@@ -132,8 +132,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1496474530}
     - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
+      propertyPath: offset.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
+      propertyPath: maxFollowSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: moveSmoothTime
-      value: 0
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
+      propertyPath: mouseSensitivity
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: checkLayer.m_Bits
@@ -149,11 +161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4554497445182377715, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4554497445182377715, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 481.81
+      value: 484.31
       objectReference: {fileID: 0}
     - target: {fileID: 4554497445182377715, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2297,7 +2309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4561547246287430085, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 484.47
+      value: 486.97
       objectReference: {fileID: 0}
     - target: {fileID: 4561547246287430085, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2351,17 +2363,41 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 15078353}
-    m_RemovedComponents:
-    - {fileID: 5098131485333683151, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: chargeBrake
+      value: 1.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3748700928085064575, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1496474531}
   m_SourcePrefab: {fileID: 100100000, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
 --- !u!1 &1496474530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3748700928085064575, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
   m_PrefabInstance: {fileID: 1496474529}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1496474531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496474530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb37c8b401b1f7449e2d53f44a708ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 15078357}
+  playerRenderer: {fileID: 75196930}
+  distanceThreshold: 2
+  transparency: 0.5
+  normalMaterial: {fileID: 2100000, guid: 617f52ba27629044c9710f2689a6e43d, type: 2}
+  hantoumeiMaterial: {fileID: 2100000, guid: ab386ff6d1235e34081d8eecf4118fa2, type: 2}
 --- !u!43 &1611435185
 Mesh:
   m_ObjectHideFlags: 0

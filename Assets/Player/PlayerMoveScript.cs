@@ -24,15 +24,16 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] private float jumpPower; //ジャンプ力
 
     [HeaderAttribute("ジェット設定")]
-    [SerializeField] private float jetPower;          //ジェットパワー
+    [SerializeField] private float jetPower;     //ジェットパワー
     [SerializeField] private float maxJetCharge; //最大ジェットパワー
-    [SerializeField] private float chargeRate;  //パワーのチャージ速度 (1秒あたりの増加量)
-    
+    [SerializeField] private float chargeRate;   //パワーのチャージ速度 (1秒あたりの増加量)
+    [SerializeField] private float chargeBrake;  //チャージ中のブレーキ力
+
+    private float currentMoveSpeed = 0f;
     private float currentJetPower = 0f;
     private bool isJumping = false;
     private bool isCharging = false;
-
-    private bool isGrounded;
+    private bool isGrounded = true;
 
     void Start()
     {
@@ -41,8 +42,8 @@ public class PlayerMoveScript : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         camManager = mainCamera.GetComponent<CameraManager>();
-        
-        isGrounded = true;
+
+        currentMoveSpeed = moveSpeed;
     }
 
     void Update()
@@ -71,7 +72,7 @@ public class PlayerMoveScript : MonoBehaviour
         }
 
         //移動処理
-        transform.position += moveVec * moveSpeed * Time.deltaTime;
+        transform.position += moveVec * currentMoveSpeed * Time.deltaTime;
 
         //接地判定
 
@@ -119,9 +120,10 @@ public class PlayerMoveScript : MonoBehaviour
         if (isGrounded)
         {
             isCharging = true;
+            anim.SetBool("charging", true);
 
             currentJetPower = 0f; // チャージ開始時にリセット
-
+            currentMoveSpeed = moveSpeed;
         }
     }
     private void ChargePower()
@@ -133,6 +135,8 @@ public class PlayerMoveScript : MonoBehaviour
         //UI更新
         uiManager.SetJetBarFillAmount(currentJetPower / maxJetCharge);
         uiManager.ShowJetBar();
+
+        currentMoveSpeed = Mathf.Clamp(currentMoveSpeed - chargeBrake * Time.deltaTime, 0f, moveSpeed);
     }
 
     private void ReleaseJet()
@@ -140,10 +144,14 @@ public class PlayerMoveScript : MonoBehaviour
         if (isCharging)
         {
             isCharging = false;
+            anim.SetBool("charging", false);
 
             // ジェット移動
             Vector3 jetVelocity = mainCamera.transform.forward * currentJetPower;
             rb.velocity = rb.velocity + jetVelocity;
+
+            //移動速度リセット
+            currentMoveSpeed = moveSpeed;
 
             StartCoroutine(uiManager.HideJetBar());
         }
