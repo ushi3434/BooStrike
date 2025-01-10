@@ -2372,6 +2372,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 702172875}
     - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: chargeRate
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 15078353}
@@ -2397,7 +2401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
       propertyPath: chargeBonusRateMax
-      value: 0.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
       propertyPath: wallDetectionSize.x

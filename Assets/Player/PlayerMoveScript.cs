@@ -38,7 +38,6 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] private float chargeBonusRateMax;      //チャージ開始時のボーナスチャージ
     [SerializeField] private Vector3 wallDetectionSize;
 
-
     private float currentMoveSpeed = 0f;
     private float currentJetCharge = 0f;
     private float bonusChargeRate = 0f;
@@ -46,7 +45,7 @@ public class PlayerMoveScript : MonoBehaviour
     private bool isJumping = false;
     private bool isCharging = false;
     private bool isGrounded = true;
-    private bool isWallTouching = false;
+    private bool isTouchingWall = false;
 
     void Start()
     {
@@ -84,7 +83,7 @@ public class PlayerMoveScript : MonoBehaviour
         }
 
         //壁でチャージ中でなければ、
-        if(!(isCharging && isWallTouching))
+        if(!(isCharging && isTouchingWall))
             //移動処理を行う
             transform.position += moveVec * currentMoveSpeed * Time.deltaTime;
 
@@ -124,7 +123,6 @@ public class PlayerMoveScript : MonoBehaviour
         {
             ReleaseJet();
         }
-
     }
 
     private void CheckOnGround()
@@ -136,12 +134,12 @@ public class PlayerMoveScript : MonoBehaviour
     private void CheckWallTouching()
     {
         // 壁に触れているかをチェック
-        isWallTouching = Physics.CheckBox(transform.position + Vector3.up * 0.9f, wallDetectionSize / 2, Quaternion.identity, WallLayer);
+        isTouchingWall = Physics.CheckBox(transform.position + Vector3.up * 0.9f, wallDetectionSize / 2, Quaternion.identity, WallLayer);
     }
 
     private void StartCharging()
     {
-        if (isGrounded || isWallTouching)
+        if (isGrounded || isTouchingWall)
         {
             isCharging = true;
             anim.SetBool("charging", true);
@@ -152,6 +150,9 @@ public class PlayerMoveScript : MonoBehaviour
             bonusChargeRate = chargeBonusRateMax * Mathf.Clamp01(rb.velocity.magnitude / 30f);
 
             rb.useGravity = false;
+
+            
+
         }
     }
     private void ChargePower()
