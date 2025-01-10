@@ -45,6 +45,11 @@ public class UIManager : MonoBehaviour
     public void SetJetBarFillAmount(float ratio)
     {
         jetBarFill.fillAmount = ratio;
+
+        if (ratio < 0.5f)
+            jetBarFill.color = new Color(ratio * 2, 1, 0);
+        else
+            jetBarFill.color = new Color(1, 1 - (ratio - 0.5f) * 2, 0);
     }
 
     public void ShowJetBar()

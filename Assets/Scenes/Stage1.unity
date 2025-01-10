@@ -878,6 +878,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 9008925613946774219, guid: c74730d4b4c1a6447b059c42e5b97bcc, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008925613946774219, guid: c74730d4b4c1a6447b059c42e5b97bcc, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008925613946774219, guid: c74730d4b4c1a6447b059c42e5b97bcc, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2366,6 +2378,42 @@ PrefabInstance:
     - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
       propertyPath: chargeBrake
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: chargeWallBrake
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: WallLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: chargeGroundBrake
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: GroundLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: chargeBonusRateMax
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: wallDetectionSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: wallDetectionSize.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: wallDetectionSize.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6737036216403934546, guid: 8ac77e2901ba5d444a7d7ccbe008dfbe, type: 3}
+      propertyPath: canJetWallLayer.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
