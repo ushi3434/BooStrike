@@ -7,7 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField] PauseMenu pauseMenu;
+    [SerializeField] UIManager uiManager;
 
     [HeaderAttribute("基本設定")]
     [SerializeField] GameObject player;
@@ -51,7 +51,7 @@ public class CameraManager : MonoBehaviour
 
         //回転角度の更新
 
-        if (!pauseMenu.GetGameIsPaused())
+        if (uiManager.GetShownScreen() == UIManager.SCREEN.GAME)
         {
             yaw += mouseX;
 

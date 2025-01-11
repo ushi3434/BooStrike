@@ -1,86 +1,126 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    [HeaderAttribute("依存オブジェクト設定")]
-    [SerializeField] Camera mainCamera;
-    [SerializeField] GameObject player;
-    [SerializeField] GameObject jetBar;
-    [SerializeField] Image jetBarFill;
-
-    [HeaderAttribute("ジェットチャージバー設定")]
-    [SerializeField] Vector3 jetBarOffset;
-
-    private PlayerMoveScript playerMoveScript;
-
-    private Vector3 jetBarVelocity = Vector3.zero;
-    private CanvasGroup canvasGroup;
-    private bool jetBarFading = false;
-
-    void Start()
+    public enum SCREEN
     {
-        playerMoveScript = player.GetComponent<PlayerMoveScript>();
+        GAME,
+        PAUSE,
+        GUIDE,
+        DEAD,
+        GOAL,
+    };
 
-        //ジェットバー
-        jetBar.GetComponent<CanvasGroup>().alpha = 0f;
+    [SerializeField] GameObject pauseMenuUI;
+    [SerializeField] GameObject guideUI;
+    [SerializeField] GameObject deadMenuUI;
+    [SerializeField] GameObject goalMenuUI;
 
-        jetBar.transform.position = mainCamera.WorldToScreenPoint(player.transform.position + Vector3.up * 0.5f) + jetBarOffset;
+    public static SCREEN showScreen;
 
-        canvasGroup = jetBar.GetComponent<CanvasGroup>();
-
+    private void Start()
+    {
+        showScreen = SCREEN.GAME;
+        Time.timeScale = 1f;
     }
 
     void Update()
     {
-        //ジェットバー
-
-        //ポジション移動
-        jetBar.transform.position = Vector3.SmoothDamp(jetBar.transform.position, mainCamera.WorldToScreenPoint(player.transform.position + Vector3.up * 0.5f) + jetBarOffset, ref jetBarVelocity, 0.03f);
-
-    }
-
-    public void SetJetBarFillAmount(float ratio)
-    {
-        jetBarFill.fillAmount = ratio;
-
-        if (ratio < 0.5f)
-            jetBarFill.color = new Color(ratio * 2, 1, 0);
-        else
-            jetBarFill.color = new Color(1, 1 - (ratio - 0.5f) * 2, 0);
-    }
-
-    public void ShowJetBar()
-    {
-        jetBar.GetComponent<CanvasGroup>().alpha = 1f;
-    }
-
-    public IEnumerator HideJetBar()
-    {
-        //もし、消去処理実行中か既に消えている場合は
-        if (jetBarFading || canvasGroup.alpha == 0f)
-            yield break; //中断
-
-        jetBarFading = true;
-
-        float elapsedTime = 0f;
-        float fadeDuration = 0.3f;
-
-        // 現在の透明度から0まで徐々に変化
-        while (elapsedTime < fadeDuration)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            elapsedTime += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration);
+            switch (showScreen)
+            {
+                case SCREEN.GAME:
+                    Pause();
+                    break;
 
-            yield return null;
+                case SCREEN.PAUSE:
+                    Resume();
+                    break;
+
+                case SCREEN.GUIDE:
+                    GuideToPause();
+                    break;
+
+                default:
+                    break;
+            }
+
         }
-
-        canvasGroup.alpha = 0f;
-
-        jetBarFading = false;
-
     }
 
+    public void Resume()
+    {
+        //カーソル開放
+        Cursor.lockState = CursorLockMode.Locked;
+
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        showScreen = SCREEN.GAME;
+    }
+
+    public void Pause()
+    {
+        //カーソルロック
+        Cursor.lockState = CursorLockMode.None;
+
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        showScreen = SCREEN.PAUSE;
+    }
+
+    public void PauseToGuide()
+    {
+        pauseMenuUI.SetActive(false);
+        guideUI.SetActive(true);
+        showScreen = SCREEN.GUIDE;
+    }
+
+    public void GuideToPause()
+    {
+        guideUI.SetActive(false);
+        pauseMenuUI.SetActive(true);
+        showScreen = SCREEN.PAUSE;
+    }
+
+    public void GoToTitle()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    public void ShowDeadMenu()
+    {
+        Cursor.lockState = CursorLockMode.None;
+
+        Time.timeScale = 0f;
+        deadMenuUI.SetActive(true);
+        showScreen = SCREEN.DEAD;
+    }
+
+    public void ShowGoalMenu()
+    {
+        Cursor.lockState = CursorLockMode.None;
+
+        Time.timeScale = 0f;
+        goalMenuUI.SetActive(true);
+        showScreen = SCREEN.GOAL;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public SCREEN GetShownScreen()
+    {
+        return showScreen;
+    }
 }

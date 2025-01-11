@@ -15,17 +15,17 @@ public class PlayerMoveScript : MonoBehaviour
 
     [HeaderAttribute("依存オブジェクト設定")]
 
-    [SerializeField] private PauseMenu pauseMenu;
+    //UIキャンバス
+    [SerializeField] private UIManager uiManager;
+    [SerializeField] private GameObject UICanvas;
+    private JetBarManager jetBarManager;
+    CharacterController test;
 
     [SerializeField] private GameObject duck;
 
     //モデルのアニメーター
     [SerializeField] private Animator modelAnimator;
 
-    //UIキャンバス
-    [SerializeField] private GameObject UICanvas;
-    private UIManager uiManager;
-    CharacterController test;
 
     //カメラ
     [SerializeField] private GameObject mainCamera; 
@@ -66,7 +66,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         coll = GetComponent<CapsuleCollider>();
-        uiManager = UICanvas.GetComponent<UIManager>();
+        jetBarManager = UICanvas.GetComponent<JetBarManager>();
         camManager = mainCamera.GetComponent<CameraManager>();
 
         currentMoveSpeed = moveSpeed;
@@ -135,7 +135,7 @@ public class PlayerMoveScript : MonoBehaviour
         }
 
         //ひよこ発射処理(レギュレーションのため)
-        if (!pauseMenu.GetGameIsPaused() && Input.GetKeyDown(KeyCode.Mouse0))
+        if (uiManager.GetShownScreen() == UIManager.SCREEN.GAME && Input.GetKeyDown(KeyCode.Mouse0))
             StartCoroutine(ShootDuck());
 
         //回転処理
@@ -174,7 +174,9 @@ public class PlayerMoveScript : MonoBehaviour
 
             bonusChargeRate = chargeBonusRateMax * Mathf.Clamp01(rb.velocity.magnitude / 30f);
 
-            rb.useGravity = false;
+            if(!isGrounded)
+                rb.useGravity = false;
+
 
         }
     }
@@ -185,8 +187,8 @@ public class PlayerMoveScript : MonoBehaviour
         currentJetCharge = Mathf.Clamp(currentJetCharge, 0f, maxJetCharge);
 
         //UI更新
-        uiManager.SetJetBarFillAmount(currentJetCharge / maxJetCharge);
-        uiManager.ShowJetBar();
+        jetBarManager.SetJetBarFillAmount(currentJetCharge / maxJetCharge);
+        jetBarManager.ShowJetBar();
 
         //チャージ時のブレーキ
         rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, chargeWallBrake * Time.deltaTime);
@@ -195,6 +197,9 @@ public class PlayerMoveScript : MonoBehaviour
 
         if(!isGrounded)
             targetRotation = Quaternion.FromToRotation(Vector3.up, GetWallNormalVec());
+
+        if (!isTouchingWall && !isGrounded)
+            ResetJet();
 
     }
 
@@ -212,7 +217,7 @@ public class PlayerMoveScript : MonoBehaviour
             rb.velocity = rb.velocity + jetVelocity;
 
 
-            StartCoroutine(uiManager.HideJetBar());
+            StartCoroutine(jetBarManager.HideJetBar());
 
             yield return new WaitForSeconds(0.3f);
 
@@ -231,7 +236,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         targetRotation = Quaternion.FromToRotation(transform.up, Vector3.up);
 
-        StartCoroutine(uiManager.HideJetBar()); //ジェットゲージを隠す
+        StartCoroutine(jetBarManager.HideJetBar()); //ジェットゲージを隠す
 
     }
 
