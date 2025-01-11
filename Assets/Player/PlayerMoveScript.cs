@@ -49,6 +49,7 @@ public class PlayerMoveScript : MonoBehaviour
     private bool isCharging = false;
     private bool isGrounded = true;
     private bool isTouchingWall = false;
+    private bool canJet = true;
 
     private Vector3 moveVec;
     private Quaternion targetRotation;
@@ -85,6 +86,7 @@ public class PlayerMoveScript : MonoBehaviour
         }
         else
         {
+            targetRotation = Quaternion.LookRotation(camManager.GetYawVec());
             anim.SetBool("running", false);
         }
 
@@ -123,7 +125,7 @@ public class PlayerMoveScript : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            ReleaseJet();
+            StartCoroutine(ReleaseJet());
         }
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
@@ -151,7 +153,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void StartCharging()
     {
-        if (isGrounded || isTouchingWall)
+        if ((isGrounded || isTouchingWall) && canJet)
         {
             isCharging = true;
             anim.SetBool("charging", true);
@@ -184,10 +186,13 @@ public class PlayerMoveScript : MonoBehaviour
 
     }
 
-    private void ReleaseJet()
+    private IEnumerator ReleaseJet()
     {
+
         if (isCharging)
         {
+            canJet = false;
+
             ResetJet();
 
             // ジェット移動
@@ -196,6 +201,10 @@ public class PlayerMoveScript : MonoBehaviour
 
 
             StartCoroutine(uiManager.HideJetBar());
+
+            yield return new WaitForSeconds(0.3f);
+
+            canJet = true;
         }
     }
 

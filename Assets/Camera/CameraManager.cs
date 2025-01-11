@@ -20,18 +20,21 @@ public class CameraManager : MonoBehaviour
     [SerializeField] LayerMask checkLayer;
     private float distance;
 
-    private float pitch = 0f; // 上下方向の回転角度
     private float yaw = 0f; // 水平方向の回転角度
     private Vector3 currentRotation; // 現在のカメラ回転
     private Vector3 rotationVelocity; // 回転スムーズ処理用
 
     private Vector3 moveVelocity;
 
+    private float currentVerticalAngle = 0f;
+
     private Rigidbody playerRb;
+    private CapsuleCollider playerColl;
 
     void Start()
     {
         playerRb = player.GetComponent<Rigidbody>();
+        playerColl = player.GetComponent<CapsuleCollider>();
         Cursor.lockState = CursorLockMode.Locked; // マウスカーソルをロック
 
         distance = offset.magnitude;
@@ -46,11 +49,6 @@ public class CameraManager : MonoBehaviour
 
         //回転角度の更新
         yaw += mouseX;
-        pitch -= mouseY;
-        pitch = Mathf.Clamp(pitch, -40f, 60f); // 上下の回転角度を制限
-
-        //カメラの回転
-        Vector3 targetRotation = new Vector3(pitch, yaw);
 
         // X方向に一定量移動していれば横回転
         if (Mathf.Abs(mouseX) > 0.001f)
@@ -63,7 +61,11 @@ public class CameraManager : MonoBehaviour
         if (Mathf.Abs(mouseY) > 0.001f)
         {
             // 回転軸はカメラ自身のX軸
-            transform.RotateAround(player.transform.position, transform.right, -mouseY);
+            currentVerticalAngle -= mouseY;
+            currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, -40f, 80f);
+
+            // カメラの回転を適用
+            transform.localRotation = Quaternion.Euler(currentVerticalAngle, transform.eulerAngles.y, 0f);
         }
 
         //カメラ移動先の基本ポジションの決定
@@ -71,7 +73,7 @@ public class CameraManager : MonoBehaviour
 
         //めり込んでいるか判定
 
-        Vector3 rayOrigin = player.transform.position + Vector3.up * 0.5f;
+        Vector3 rayOrigin = playerColl.bounds.center;
         Vector3 targetPosition;
         RaycastHit hit;
 
@@ -79,7 +81,7 @@ public class CameraManager : MonoBehaviour
 
         if (Physics.SphereCast(rayOrigin, 0.15f, standardPosition - rayOrigin, out hit, distance, checkLayer))
         {
-            targetPosition = hit.point + (rayOrigin - hit.point).normalized * 0.25f;
+            targetPosition = hit.point + hit.normal * 0.25f;
         }
         else
         {
