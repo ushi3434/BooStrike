@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.ProBuilder;
 using UnityEngine.UIElements;
+using UnityEngine.XR;
 
 public class PlayerMoveScript : MonoBehaviour
 {
     private Rigidbody rb;
     private Animator anim;
+    private CapsuleCollider coll;
 
     [HeaderAttribute("依存オブジェクト設定")]
 
@@ -47,11 +50,15 @@ public class PlayerMoveScript : MonoBehaviour
     private bool isGrounded = true;
     private bool isTouchingWall = false;
 
+    private Vector3 moveVec;
+    private Quaternion targetRotation;
+
     void Start()
     {
 
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        coll = GetComponent<CapsuleCollider>();
         uiManager = UICanvas.GetComponent<UIManager>();
         camManager = mainCamera.GetComponent<CameraManager>();
 
@@ -61,8 +68,8 @@ public class PlayerMoveScript : MonoBehaviour
     void Update()
     {
         //移動方向の更新
-        Vector3 moveVec = camManager.GetYawVec() * Input.GetAxisRaw("Vertical") +
-                          camManager.GetYawVec(90f) * Input.GetAxisRaw("Horizontal");
+        moveVec = camManager.GetYawVec() * Input.GetAxisRaw("Vertical") +
+                  camManager.GetYawVec(90f) * Input.GetAxisRaw("Horizontal");
 
         //ベクトルの正規化
         moveVec = Vector3.Normalize(moveVec);
@@ -71,8 +78,7 @@ public class PlayerMoveScript : MonoBehaviour
         if (moveVec != Vector3.zero)
         {
             //移動方向を振り向くようにする
-            Quaternion targetRotation = Quaternion.LookRotation(moveVec);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+            targetRotation = Quaternion.LookRotation(moveVec);
 
             //歩行アニメーションの切り替え
             anim.SetBool("running", true);
@@ -82,10 +88,6 @@ public class PlayerMoveScript : MonoBehaviour
             anim.SetBool("running", false);
         }
 
-        //壁でチャージ中でなければ、
-        if(!(isCharging && isTouchingWall))
-            //移動処理を行う
-            transform.position += moveVec * currentMoveSpeed * Time.deltaTime;
 
         //接地判定
         CheckOnGround();
@@ -123,6 +125,16 @@ public class PlayerMoveScript : MonoBehaviour
         {
             ReleaseJet();
         }
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+    }
+
+    void FixedUpdate()
+    {
+        //壁でチャージ中でなければ、
+        if (!(isCharging && isTouchingWall))
+            //移動処理を行う
+            transform.position += moveVec * currentMoveSpeed * Time.fixedDeltaTime;
     }
 
     private void CheckOnGround()
@@ -151,8 +163,6 @@ public class PlayerMoveScript : MonoBehaviour
 
             rb.useGravity = false;
 
-            
-
         }
     }
     private void ChargePower()
@@ -165,9 +175,13 @@ public class PlayerMoveScript : MonoBehaviour
         uiManager.SetJetBarFillAmount(currentJetCharge / maxJetCharge);
         uiManager.ShowJetBar();
 
+        //チャージ時のブレーキ
         rb.velocity = Vector3.Lerp(rb.velocity, Vector3.zero, chargeWallBrake * Time.deltaTime);
 
         currentMoveSpeed = Mathf.Clamp(currentMoveSpeed - chargeGroundBrake * Time.deltaTime, 0f, moveSpeed);
+
+        targetRotation = Quaternion.FromToRotation(Vector3.up, GetWallNormalVec());
+
     }
 
     private void ReleaseJet()
@@ -194,6 +208,8 @@ public class PlayerMoveScript : MonoBehaviour
 
         currentMoveSpeed = moveSpeed; //移動速度リセット
 
+        targetRotation = Quaternion.FromToRotation(transform.up, Vector3.up);
+
         StartCoroutine(uiManager.HideJetBar()); //ジェットゲージを隠す
 
     }
@@ -205,17 +221,44 @@ public class PlayerMoveScript : MonoBehaviour
 
         isJumping = true;
 
-        //チャージをキャンセルする
-        ResetJet();
 
         //ジャンプ力を与える
         rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
+
+        //チャージをキャンセルする
+        ResetJet();
+
+        yield return new WaitForSeconds(0.4f);
 
         isJumping = false;
 
     }
+    private Vector3 GetWallNormalVec()
+    {
+        Collider[] colliders = Physics.OverlapBox(transform.position + Vector3.up * 0.9f, wallDetectionSize / 2, Quaternion.identity, WallLayer);
+
+        foreach (Collider collider in colliders)
+        {
+            // オブジェクトの中心に向かってRayを飛ばす
+            Vector3 rayOrigin = transform.position;
+            Vector3 direction = (collider.bounds.center - rayOrigin).normalized;
+
+            // Raycastで衝突点と法線を取得
+            if (Physics.Raycast(rayOrigin, direction, out RaycastHit hit, Mathf.Infinity, WallLayer))
+            {
+                Debug.Log($"Object: {collider.name}");
+                Debug.Log($"Collision Point: {hit.point}, Normal: {hit.normal}");
+                Debug.DrawRay(hit.point, hit.normal, Color.red, 1.0f); // 法線を可視化
+
+                return hit.normal;
+            }
+        }
+
+        return Vector3.zero;
+    }
+
 
     void OnDrawGizmos()
     {
@@ -223,5 +266,6 @@ public class PlayerMoveScript : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireCube(transform.position + Vector3.up * 0.9f, wallDetectionSize);
     }
+
 
 }
