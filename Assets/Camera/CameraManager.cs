@@ -50,10 +50,10 @@ public class CameraManager : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
         //‰ñ“]Šp“x‚ÌXV
-        yaw += mouseX;
 
         if (!pauseMenu.GetGameIsPaused())
         {
+            yaw += mouseX;
 
             // X•ûŒü‚Éˆê’è—ÊˆÚ“®‚µ‚Ä‚¢‚ê‚Î‰¡‰ñ“]
             if (Mathf.Abs(mouseX) > 0.001f)
