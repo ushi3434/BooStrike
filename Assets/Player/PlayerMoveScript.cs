@@ -1,6 +1,7 @@
 using NUnit.Framework.Internal;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.ProBuilder;
@@ -10,13 +11,19 @@ using UnityEngine.XR;
 public class PlayerMoveScript : MonoBehaviour
 {
     private Rigidbody rb;
-    private Animator anim;
     private CapsuleCollider coll;
 
     [HeaderAttribute("依存オブジェクト設定")]
 
+    [SerializeField] private PauseMenu pauseMenu;
+
+    [SerializeField] private GameObject duck;
+
+    //モデルのアニメーター
+    [SerializeField] private Animator modelAnimator;
+
     //UIキャンバス
-    [SerializeField] private GameObject UICanvas;   
+    [SerializeField] private GameObject UICanvas;
     private UIManager uiManager;
     CharacterController test;
 
@@ -58,7 +65,6 @@ public class PlayerMoveScript : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
         coll = GetComponent<CapsuleCollider>();
         uiManager = UICanvas.GetComponent<UIManager>();
         camManager = mainCamera.GetComponent<CameraManager>();
@@ -82,12 +88,12 @@ public class PlayerMoveScript : MonoBehaviour
             targetRotation = Quaternion.LookRotation(moveVec);
 
             //歩行アニメーションの切り替え
-            anim.SetBool("running", true);
+            modelAnimator.SetBool("running", true);
         }
         else
         {
             targetRotation = Quaternion.LookRotation(camManager.GetYawVec());
-            anim.SetBool("running", false);
+            modelAnimator.SetBool("running", false);
         }
 
 
@@ -103,11 +109,11 @@ public class PlayerMoveScript : MonoBehaviour
         //もし地上にいたら
         if (isGrounded)
         {
-            anim.SetBool("jumping", false);
+            modelAnimator.SetBool("jumping", false);
         }
         else
         {
-            anim.SetBool("jumping", true);
+            modelAnimator.SetBool("jumping", true);
 
         }
 
@@ -128,6 +134,11 @@ public class PlayerMoveScript : MonoBehaviour
             StartCoroutine(ReleaseJet());
         }
 
+        //ひよこ発射処理(レギュレーションのため)
+        if (!pauseMenu.GetGameIsPaused() && Input.GetKeyDown(KeyCode.Mouse0))
+            StartCoroutine(ShootDuck());
+
+        //回転処理
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
     }
 
@@ -141,14 +152,14 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void CheckOnGround()
     {
-        Vector3 center = transform.position + Vector3.up * 0.10f;
+        Vector3 center = transform.position + Vector3.up * -0.7f;
         isGrounded = Physics.CheckSphere(center, 0.2f, GroundLayer);
     }
 
     private void CheckWallTouching()
     {
         // 壁に触れているかをチェック
-        isTouchingWall = Physics.CheckBox(transform.position + Vector3.up * 0.9f, wallDetectionSize / 2, Quaternion.identity, WallLayer);
+        isTouchingWall = Physics.CheckBox(transform.position + Vector3.up * 0.1f, wallDetectionSize / 2, Quaternion.identity, WallLayer);
     }
 
     private void StartCharging()
@@ -156,7 +167,7 @@ public class PlayerMoveScript : MonoBehaviour
         if ((isGrounded || isTouchingWall) && canJet)
         {
             isCharging = true;
-            anim.SetBool("charging", true);
+            modelAnimator.SetBool("charging", true);
 
             currentJetCharge = 0f; // チャージ開始時にリセット
             currentMoveSpeed = moveSpeed;
@@ -212,7 +223,7 @@ public class PlayerMoveScript : MonoBehaviour
     private void ResetJet()
     {
         isCharging = false; //フラグの変更
-        anim.SetBool("charging", false); //アニメーションパラメータの変更
+        modelAnimator.SetBool("charging", false); //アニメーションパラメータの変更
 
         rb.useGravity = true; //重力復活
 
@@ -258,8 +269,6 @@ public class PlayerMoveScript : MonoBehaviour
             // Raycastで衝突点と法線を取得
             if (Physics.Raycast(rayOrigin, direction, out RaycastHit hit, Mathf.Infinity, WallLayer))
             {
-                Debug.Log($"Object: {collider.name}");
-                Debug.Log($"Collision Point: {hit.point}, Normal: {hit.normal}");
                 Debug.DrawRay(hit.point, hit.normal, Color.red, 1.0f); // 法線を可視化
 
                 return hit.normal;
@@ -269,12 +278,25 @@ public class PlayerMoveScript : MonoBehaviour
         return Vector3.zero;
     }
 
+    private IEnumerator ShootDuck()
+    {
+        GameObject obj = Instantiate(duck, transform.position, Quaternion.identity);
+
+        obj.GetComponent<Rigidbody>().AddForce(mainCamera.transform.forward * 15.0f, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(5f);
+
+        Destroy(obj);
+    }
 
     void OnDrawGizmos()
     {
         // 壁の検知範囲を可視化
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position + Vector3.up * 0.9f, wallDetectionSize);
+        Gizmos.DrawWireCube(transform.position + Vector3.up * 0.1f, wallDetectionSize);
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawSphere(transform.position + Vector3.up * -0.7f, 0.2f);
     }
 
 

@@ -7,6 +7,8 @@ using static UnityEngine.GraphicsBuffer;
 
 public class CameraManager : MonoBehaviour
 {
+    [SerializeField] PauseMenu pauseMenu;
+
     [HeaderAttribute("基本設定")]
     [SerializeField] GameObject player;
     [SerializeField] Vector3 offset;
@@ -50,22 +52,27 @@ public class CameraManager : MonoBehaviour
         //回転角度の更新
         yaw += mouseX;
 
-        // X方向に一定量移動していれば横回転
-        if (Mathf.Abs(mouseX) > 0.001f)
+        if (!pauseMenu.GetGameIsPaused())
         {
-            // 回転軸はワールド座標のY軸
-            transform.RotateAround(player.transform.position, Vector3.up, mouseX);
-        }
 
-        // Y方向に一定量移動していれば縦回転
-        if (Mathf.Abs(mouseY) > 0.001f)
-        {
-            // 回転軸はカメラ自身のX軸
-            currentVerticalAngle -= mouseY;
-            currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, -40f, 80f);
+            // X方向に一定量移動していれば横回転
+            if (Mathf.Abs(mouseX) > 0.001f)
+            {
+                // 回転軸はワールド座標のY軸
+                transform.RotateAround(player.transform.position, Vector3.up, mouseX);
+            }
 
-            // カメラの回転を適用
-            transform.localRotation = Quaternion.Euler(currentVerticalAngle, transform.eulerAngles.y, 0f);
+            // Y方向に一定量移動していれば縦回転
+            if (Mathf.Abs(mouseY) > 0.001f)
+            {
+                // 回転軸はカメラ自身のX軸
+                currentVerticalAngle -= mouseY;
+                currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, -40f, 80f);
+
+                // カメラの回転を適用
+                transform.localRotation = Quaternion.Euler(currentVerticalAngle, transform.eulerAngles.y, 0f);
+            }
+
         }
 
         //カメラ移動先の基本ポジションの決定

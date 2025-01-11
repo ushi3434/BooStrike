@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 484.47
+      value: 486.97
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1285705782834317151, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 617f52ba27629044c9710f2689a6e43d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -72,7 +76,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6737036216403934546}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 579732077683350701}
   m_SourcePrefab: {fileID: 100100000, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
+--- !u!137 &2959103449886851441 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1285705782834317151, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
+  m_PrefabInstance: {fileID: 4091351418108298798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3748700928085064575 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86a0f58ad3bd50a45a80f8b80d2431bd, type: 3}
@@ -164,8 +176,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UICanvas: {fileID: 0}
   mainCamera: {fileID: 0}
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  WallLayer:
+    serializedVersion: 2
+    m_Bits: 256
   moveSpeed: 5
   jumpPower: 6.5
   jetPower: 20
   maxJetCharge: 30
-  chargeRate: 20
+  chargeRate: 25
+  chargeGroundBrake: 2
+  chargeWallBrake: 2
+  chargeBonusRateMax: 0.75
+  wallDetectionSize: {x: 1, y: 1.5, z: 1}
+--- !u!114 &579732077683350701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3748700928085064575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb37c8b401b1f7449e2d53f44a708ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 0}
+  playerRenderer: {fileID: 2959103449886851441}
+  distanceThreshold: 2
+  transparency: 0.5
+  normalMaterial: {fileID: 2100000, guid: 617f52ba27629044c9710f2689a6e43d, type: 2}
+  hantoumeiMaterial: {fileID: 2100000, guid: ab386ff6d1235e34081d8eecf4118fa2, type: 2}
