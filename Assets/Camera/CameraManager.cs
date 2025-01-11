@@ -15,8 +15,10 @@ public class CameraManager : MonoBehaviour
     [SerializeField] float moveSmoothTime;
 
     [HeaderAttribute("視点移動設定")]
-    [SerializeField] float mouseSensitivity; // マウス感度
+    [SerializeField] float baseMouseSensitivity; // マウス感度
     [SerializeField] float rotationSmoothTime; // カメラ回転のスムーズさ
+
+    private float mouseSensitivity;
 
     [HeaderAttribute("めり込み設定")]
     [SerializeField] LayerMask checkLayer;
@@ -35,6 +37,8 @@ public class CameraManager : MonoBehaviour
 
     void Start()
     {
+        mouseSensitivity = baseMouseSensitivity * PlayerPrefs.GetFloat("sensitivity", 1.0f);
+
         playerRb = player.GetComponent<Rigidbody>();
         playerColl = player.GetComponent<CapsuleCollider>();
         Cursor.lockState = CursorLockMode.Locked; // マウスカーソルをロック
@@ -98,6 +102,9 @@ public class CameraManager : MonoBehaviour
 
         //カメラポジションの移動
         transform.position = targetPosition;
+
+        Debug.Log(mouseSensitivity);
+
     }
 
     public float GetYaw()
@@ -110,5 +117,12 @@ public class CameraManager : MonoBehaviour
         float rad = (yaw + offsetDeg) * Mathf.Deg2Rad;
 
         return new Vector3(Mathf.Sin(rad), 0, Mathf.Cos(rad));
+    }
+
+    public void SetMouseSensitivity(float multiplier)
+    {
+        mouseSensitivity = baseMouseSensitivity * multiplier;
+        PlayerPrefs.SetFloat("sensitivity", multiplier);
+
     }
 }

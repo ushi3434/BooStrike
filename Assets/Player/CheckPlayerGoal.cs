@@ -19,6 +19,9 @@ public class CheckPlayerGoal : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer(targetLayer))
+        {
+            collision.gameObject.GetComponent<GoalManager>().PlayGoalSound();
             uiManager.ShowGoalMenu();
+        }
     }
 }

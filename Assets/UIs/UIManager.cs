@@ -97,6 +97,8 @@ public class UIManager : MonoBehaviour
 
         Time.timeScale = 0f;
         deadMenuUI.SetActive(true);
+
+        deadMenuUI.GetComponent<ShakeUI>().StartShake();
         showScreen = SCREEN.DEAD;
     }
 
@@ -106,6 +108,8 @@ public class UIManager : MonoBehaviour
 
         Time.timeScale = 0f;
         goalMenuUI.SetActive(true);
+
+        goalMenuUI.GetComponent<ShakeUI>().StartShake();
         showScreen = SCREEN.GOAL;
     }
 
