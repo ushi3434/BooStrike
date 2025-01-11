@@ -182,7 +182,8 @@ public class PlayerMoveScript : MonoBehaviour
 
         currentMoveSpeed = Mathf.Clamp(currentMoveSpeed - chargeGroundBrake * Time.deltaTime, 0f, moveSpeed);
 
-        targetRotation = Quaternion.FromToRotation(Vector3.up, GetWallNormalVec());
+        if(!isGrounded)
+            targetRotation = Quaternion.FromToRotation(Vector3.up, GetWallNormalVec());
 
     }
 
