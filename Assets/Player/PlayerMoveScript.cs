@@ -54,6 +54,7 @@ public class PlayerMoveScript : MonoBehaviour
     [SerializeField] private float chargeWallBrake;     //チャージ中の壁のブレーキ力
     [SerializeField] private float chargeBonusRateMax;      //チャージ開始時のボーナスチャージ
     [SerializeField] private Vector3 wallDetectionSize;
+    [SerializeField] private bool invertNormalVec;
 
     private float currentMoveSpeed = 0f;
     private float currentJetCharge = 0f;
@@ -306,7 +307,10 @@ public class PlayerMoveScript : MonoBehaviour
             {
                 Debug.DrawRay(hit.point, hit.normal, Color.red, 1.0f); // 法線を可視化
 
-                return hit.normal;
+                if (invertNormalVec)
+                    return -hit.normal;
+                else
+                    return hit.normal;
             }
         }
 

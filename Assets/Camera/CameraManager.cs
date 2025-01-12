@@ -71,7 +71,7 @@ public class CameraManager : MonoBehaviour
             {
                 // 回転軸はカメラ自身のX軸
                 currentVerticalAngle -= mouseY;
-                currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, -40f, 80f);
+                currentVerticalAngle = Mathf.Clamp(currentVerticalAngle, -40f, 85f);
 
                 // カメラの回転を適用
                 transform.localRotation = Quaternion.Euler(currentVerticalAngle, transform.eulerAngles.y, 0f);

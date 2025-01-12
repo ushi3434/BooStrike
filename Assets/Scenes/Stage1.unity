@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 173663800}
+      objectReference: {fileID: 1196867815}
     - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: offset.y
       value: 1
@@ -996,11 +996,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &173663800 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6168163456311029257, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
-  m_PrefabInstance: {fileID: 5286394464871320223}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &216420514
 Mesh:
   m_ObjectHideFlags: 0
@@ -8683,6 +8678,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1196867815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2964451174007585730, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
+  m_PrefabInstance: {fileID: 5286394464871320223}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1201911857
 GameObject:
   m_ObjectHideFlags: 0
@@ -12630,11 +12630,15 @@ PrefabInstance:
     - target: {fileID: 559353957689604348, guid: a5458fa256d78994c9b1bac7e613019a, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 173663800}
+      objectReference: {fileID: 1196867815}
     - target: {fileID: 559353957689604348, guid: a5458fa256d78994c9b1bac7e613019a, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 15078354}
+    - target: {fileID: 1146909377158823993, guid: a5458fa256d78994c9b1bac7e613019a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Stage2
+      objectReference: {fileID: 0}
     - target: {fileID: 2174152666293116140, guid: a5458fa256d78994c9b1bac7e613019a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -12719,6 +12723,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 656666594}
+    - target: {fileID: 6597217608023675839, guid: a5458fa256d78994c9b1bac7e613019a, type: 3}
+      propertyPath: m_Text
+      value: STAGE1 COMPLETE
+      objectReference: {fileID: 0}
     - target: {fileID: 7957841672561336990, guid: a5458fa256d78994c9b1bac7e613019a, type: 3}
       propertyPath: m_Name
       value: Game UI
@@ -12784,7 +12792,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2079573763337001267, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 6918984115195125233}
     - target: {fileID: 3538911057653964057, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 6918984115195125233}
+    - target: {fileID: 4721331671518984353, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 6918984115195125233}
@@ -12792,6 +12808,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6242279481422613767, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
+      propertyPath: UICanvas
+      value: 
+      objectReference: {fileID: 6592805961266263054}
+    - target: {fileID: 6242279481422613767, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
+      propertyPath: uiManager
+      value: 
+      objectReference: {fileID: 6918984115195125233}
+    - target: {fileID: 6242279481422613767, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 15078353}
+    - target: {fileID: 6242279481422613767, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 656666594}
     - target: {fileID: 7181620728083076002, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
       propertyPath: cameraTransform
       value: 
@@ -12812,6 +12844,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 656666594}
+    - target: {fileID: 8765083545694279721, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 15078357}
     - target: {fileID: 9074210446693006966, guid: 9103b6a3089f25547b2b0cb39f05d9ea, type: 3}
       propertyPath: m_DirtyAABB
       value: 0
