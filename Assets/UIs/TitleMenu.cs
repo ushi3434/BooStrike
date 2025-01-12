@@ -17,7 +17,7 @@ public class TitleMenu : MonoBehaviour
     [SerializeField] private GameObject TitleUI;
     [SerializeField] private GameObject GuideUI;
     [SerializeField] private GameObject CreditUI;
-    [SerializeField] private GameObject stageSelectUI;
+    [SerializeField] private GameObject StageSelectUI;
 
     private TITLE_SCREEN shownScreen;
 
@@ -28,18 +28,25 @@ public class TitleMenu : MonoBehaviour
 
     private void Update()
     {
-        switch (shownScreen)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            case TITLE_SCREEN.GUIDE:
-                GuideToTitle();
-                break;
+            switch (shownScreen)
+            {
+                case TITLE_SCREEN.GUIDE:
+                    GuideToTitle();
+                    break;
 
-            case TITLE_SCREEN.CREDIT:
-                CreditToTitle();
-                break;
+                case TITLE_SCREEN.CREDIT:
+                    CreditToTitle();
+                    break;
 
-            default:
-                break;
+                case TITLE_SCREEN.STAGESELECT:
+
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 
@@ -47,6 +54,7 @@ public class TitleMenu : MonoBehaviour
     {
         TitleUI.SetActive(false);
         GuideUI.SetActive(true);
+        shownScreen = TITLE_SCREEN.GUIDE;
 
     }
 
@@ -54,23 +62,45 @@ public class TitleMenu : MonoBehaviour
     {
         GuideUI.SetActive(false);
         TitleUI.SetActive(true);
+        shownScreen = TITLE_SCREEN.TOP;
+
     }
 
     public void TitleToCredit()
     {
         TitleUI.SetActive(false);
         CreditUI.SetActive(true);
+        shownScreen = TITLE_SCREEN.CREDIT;
+
     }
 
     public void CreditToTitle()
     {
         CreditUI.SetActive(false);
         TitleUI.SetActive(true);
+        shownScreen = TITLE_SCREEN.TOP;
+
     }
 
     public void GameStart()
     {
         SceneManager.LoadScene("Stage1");
+    }
+
+    public void TitleToSelect()
+    {
+        TitleUI.SetActive(false);
+        StageSelectUI.SetActive(true);
+        shownScreen = TITLE_SCREEN.STAGESELECT;
+
+    }
+
+    public void SelectToTitle()
+    {
+        StageSelectUI.SetActive(false);
+        TitleUI.SetActive(true);
+        shownScreen = TITLE_SCREEN.TOP;
+
     }
 
     public void QuitGame()

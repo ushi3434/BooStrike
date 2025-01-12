@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -48,7 +47,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayChargeJet()
     {
-        audioSource.PlayOneShot(chargeJetSound,0.5f);
+        audioSource.PlayOneShot(chargeJetSound,0.6f);
     }
 
     public void StopBGM()
