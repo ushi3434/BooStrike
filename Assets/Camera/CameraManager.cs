@@ -102,9 +102,6 @@ public class CameraManager : MonoBehaviour
 
         //カメラポジションの移動
         transform.position = targetPosition;
-
-        Debug.Log(mouseSensitivity);
-
     }
 
     public float GetYaw()

@@ -511,37 +511,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 173663800}
     - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
-      propertyPath: offset.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
-      propertyPath: pauseMenu
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: uiManager
       value: 
       objectReference: {fileID: 6918984115195125233}
-    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
-      propertyPath: maxFollowSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
-      propertyPath: moveSmoothTime
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
-      propertyPath: mouseSensitivity
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
-      propertyPath: checkLayer.m_Bits
-      value: 1344
-      objectReference: {fileID: 0}
-    - target: {fileID: 4278248615003544873, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
-      propertyPath: baseMouseSensitivity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4324247068342283732, guid: 470c2a35514d7294681306cb6b66274e, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -18840,7 +18812,7 @@ GameObject:
   - component: {fileID: 1302095939}
   - component: {fileID: 1302095938}
   m_Layer: 0
-  m_Name: 0057-download-image-m
+  m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
