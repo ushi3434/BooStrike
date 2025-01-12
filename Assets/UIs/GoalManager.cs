@@ -28,7 +28,7 @@ public class GoalManager : MonoBehaviour
 
     public void PlayGoalSound()
     {
-        audioSource.PlayOneShot(goalSound);
+        audioSource.PlayOneShot(goalSound, 0.4f);
     }
 
 }

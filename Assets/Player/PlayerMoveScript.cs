@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.ProBuilder;
 using UnityEngine.UIElements;
 using UnityEngine.XR;
+using static UnityEngine.ParticleSystem;
 
 public class PlayerMoveScript : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class PlayerMoveScript : MonoBehaviour
     private CapsuleCollider coll;
 
     [HeaderAttribute("依存オブジェクト設定")]
+
+    [SerializeField] private ParticleSystem particle;
+
+    //オーディオマネージャー
+    [SerializeField] private AudioManager audioManager;
 
     //UIキャンバス
     [SerializeField] private UIManager uiManager;
@@ -110,10 +116,14 @@ public class PlayerMoveScript : MonoBehaviour
         if (isGrounded)
         {
             modelAnimator.SetBool("jumping", false);
+            
+            //エフェクト無効
+            particle.Stop();
         }
         else
         {
             modelAnimator.SetBool("jumping", true);
+
 
         }
 
@@ -177,6 +187,11 @@ public class PlayerMoveScript : MonoBehaviour
             if(!isGrounded)
                 rb.useGravity = false;
 
+            //効果音
+            audioManager.PlayChargeJet();
+
+            //エフェクト無効
+            particle.Stop();
 
         }
     }
@@ -210,7 +225,11 @@ public class PlayerMoveScript : MonoBehaviour
         {
             canJet = false;
 
+
             ResetJet();
+
+            //効果音
+            audioManager.PlayReleaseJet(currentJetCharge / maxJetCharge);
 
             // ジェット移動
             Vector3 jetVelocity = mainCamera.transform.forward * currentJetCharge;
@@ -219,7 +238,13 @@ public class PlayerMoveScript : MonoBehaviour
 
             StartCoroutine(jetBarManager.HideJetBar());
 
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.1f);
+
+            //エフェクト起動
+            particle.Play();
+
+
+            yield return new WaitForSeconds(0.2f);
 
             canJet = true;
         }

@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
         GOAL,
     };
 
+    [SerializeField] AudioManager audioManager;
+
     [SerializeField] GameObject pauseMenuUI;
     [SerializeField] GameObject guideUI;
     [SerializeField] GameObject deadMenuUI;
@@ -54,6 +56,9 @@ public class UIManager : MonoBehaviour
 
     public void Resume()
     {
+        //BGM音量大きくする
+        audioManager.BGM.volume = 0.2f;
+
         //カーソル開放
         Cursor.lockState = CursorLockMode.Locked;
 
@@ -64,6 +69,9 @@ public class UIManager : MonoBehaviour
 
     public void Pause()
     {
+        //BGM音量小さくする
+        audioManager.BGM.volume = 0.1f;
+
         //カーソルロック
         Cursor.lockState = CursorLockMode.None;
 
@@ -96,6 +104,12 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
         Time.timeScale = 0f;
+
+        audioManager.StopBGM();
+        
+        //効果音
+        audioManager.PlayDeadSound();
+
         deadMenuUI.SetActive(true);
 
         deadMenuUI.GetComponent<ShakeUI>().StartShake();
