@@ -38,7 +38,8 @@ public class PlayerMoveScript : MonoBehaviour
     private CameraManager camManager;
 
     //レイヤー
-    [SerializeField] private LayerMask GroundLayer; //地面のレイヤー
+    [SerializeField] private LayerMask JetGroundLayer; //地面のレイヤー
+    [SerializeField] private LayerMask AllGroundLayer; //地面のレイヤー
     [SerializeField] private LayerMask WallLayer;   //壁のレイヤー
 
     [HeaderAttribute("基本移動設定")]
@@ -62,6 +63,7 @@ public class PlayerMoveScript : MonoBehaviour
     private bool isCharging = false;
     private bool isGrounded = true;
     private bool isTouchingWall = false;
+    private bool canGroundJet = false;
     private bool canJet = true;
 
     private Vector3 moveVec;
@@ -101,6 +103,8 @@ public class PlayerMoveScript : MonoBehaviour
             targetRotation = Quaternion.LookRotation(camManager.GetYawVec());
             modelAnimator.SetBool("running", false);
         }
+
+        Debug.Log(moveVec);
 
 
         //接地判定
@@ -163,7 +167,8 @@ public class PlayerMoveScript : MonoBehaviour
     private void CheckOnGround()
     {
         Vector3 center = transform.position + Vector3.up * -0.7f;
-        isGrounded = Physics.CheckSphere(center, 0.2f, GroundLayer);
+        isGrounded = Physics.CheckSphere(center, 0.2f,AllGroundLayer);
+        canGroundJet = Physics.CheckSphere(center, 0.2f, JetGroundLayer);
     }
 
     private void CheckWallTouching()
@@ -174,7 +179,7 @@ public class PlayerMoveScript : MonoBehaviour
 
     private void StartCharging()
     {
-        if ((isGrounded || isTouchingWall) && canJet)
+        if ((canGroundJet || isTouchingWall) && canJet)
         {
             isCharging = true;
             modelAnimator.SetBool("charging", true);
@@ -184,7 +189,7 @@ public class PlayerMoveScript : MonoBehaviour
 
             bonusChargeRate = chargeBonusRateMax * Mathf.Clamp01(rb.velocity.magnitude / 30f);
 
-            if(!isGrounded)
+            if(!canGroundJet)
                 rb.useGravity = false;
 
             //効果音
@@ -210,10 +215,10 @@ public class PlayerMoveScript : MonoBehaviour
 
         currentMoveSpeed = Mathf.Clamp(currentMoveSpeed - chargeGroundBrake * Time.deltaTime, 0f, moveSpeed);
 
-        if(!isGrounded)
+        if(!canGroundJet)
             targetRotation = Quaternion.FromToRotation(Vector3.up, GetWallNormalVec());
 
-        if (!isTouchingWall && !isGrounded)
+        if (!isTouchingWall && !canGroundJet)
             ResetJet();
 
     }
