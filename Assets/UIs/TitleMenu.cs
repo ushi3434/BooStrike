@@ -11,11 +11,13 @@ public class TitleMenu : MonoBehaviour
         TOP,
         GUIDE,
         CREDIT,
+        STAGESELECT,
     }
 
     [SerializeField] private GameObject TitleUI;
     [SerializeField] private GameObject GuideUI;
     [SerializeField] private GameObject CreditUI;
+    [SerializeField] private GameObject stageSelectUI;
 
     private TITLE_SCREEN shownScreen;
 
