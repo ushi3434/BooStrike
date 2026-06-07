@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 10
+  serializedVersion: 9
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,6 +66,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -276,8 +279,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -441,8 +444,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -606,8 +609,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -931,8 +934,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1391,8 +1392,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1.0000001
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1.0000001
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -1481,8 +1482,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1836,8 +1835,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2215,8 +2212,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2659,8 +2654,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511686
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511686
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -2735,8 +2730,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3195,8 +3188,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3663,8 +3654,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1.0000001
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1.0000001
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -3828,8 +3819,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -3919,8 +3910,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4524,8 +4513,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -4689,8 +4678,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511686
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511686
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -4859,8 +4848,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -4935,8 +4924,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5403,8 +5390,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -5568,8 +5555,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -5814,8 +5801,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -5979,8 +5966,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511686
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511686
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -6144,8 +6131,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -6220,8 +6207,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6688,8 +6673,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511627
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511627
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -6853,8 +6838,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -7018,8 +7003,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511627
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511627
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -7108,8 +7093,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7552,8 +7535,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -7794,8 +7777,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -7887,8 +7870,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -8331,8 +8312,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -8407,8 +8388,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -8851,8 +8830,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -8927,8 +8906,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9395,8 +9372,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -9560,8 +9537,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -9636,8 +9613,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -9991,8 +9966,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -10515,8 +10488,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -10591,8 +10564,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11112,8 +11083,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -11277,8 +11248,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -11370,8 +11341,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -11685,7 +11654,6 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cb36feb792cfacf4699c2f9a1ea2c6eb, type: 3}
-  m_Resource: {fileID: 8300000, guid: cb36feb792cfacf4699c2f9a1ea2c6eb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -11943,8 +11911,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -12019,8 +11987,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12564,8 +12530,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -12654,8 +12620,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13024,8 +12988,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13523,8 +13485,6 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -18390,8 +18350,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -18906,8 +18864,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19300,8 +19256,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19773,8 +19727,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 631488973}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -19998,8 +19953,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -20163,8 +20118,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -20239,8 +20194,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -20683,8 +20636,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -20848,8 +20801,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -20885,7 +20838,6 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.375
   m_Pitch: 1
@@ -21163,8 +21115,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -21328,8 +21280,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -21404,8 +21356,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -21798,8 +21748,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -22314,8 +22262,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -22725,8 +22671,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -23197,8 +23141,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511627
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511627
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -23273,8 +23217,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -23717,8 +23659,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -23793,8 +23735,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -24261,8 +24201,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -24426,8 +24366,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -24591,8 +24531,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -24756,8 +24696,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -24921,8 +24861,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511627
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511627
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -25012,8 +24952,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -25617,8 +25555,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -25782,8 +25720,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511627
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511627
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -25858,8 +25796,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -26326,8 +26262,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -26402,8 +26338,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -26796,8 +26730,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -27401,8 +27333,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -27477,8 +27409,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -27945,8 +27875,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -28021,8 +27951,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28465,8 +28393,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -28541,8 +28469,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28985,8 +28911,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -29061,8 +28987,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29529,8 +29453,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -29605,8 +29529,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29960,8 +29882,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -30404,8 +30324,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -30569,8 +30489,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -30734,8 +30654,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511686
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511686
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -30899,8 +30819,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -31064,8 +30984,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -31140,8 +31060,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -31608,8 +31526,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -31773,8 +31691,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -31938,8 +31856,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -32103,8 +32021,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -32179,8 +32097,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -32647,8 +32563,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -32723,8 +32639,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -33167,8 +33081,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -33243,8 +33157,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -33711,8 +33623,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -33876,8 +33788,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -34041,8 +33953,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -34206,8 +34118,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -34297,8 +34209,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -34692,8 +34602,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -35160,8 +35068,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -35325,8 +35233,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -35490,8 +35398,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -35566,8 +35474,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -36010,8 +35916,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -36175,8 +36081,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -36340,8 +36246,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511716
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511716
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -36416,8 +36322,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -36860,8 +36764,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -36936,8 +36840,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -37291,8 +37193,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -37759,8 +37659,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -37924,8 +37824,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -38089,8 +37989,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -38254,8 +38154,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511686
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511686
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -38419,8 +38319,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -38584,8 +38484,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -38660,8 +38560,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -39104,8 +39002,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -39269,8 +39167,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -39345,8 +39243,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -39789,8 +39685,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -39954,8 +39850,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -40030,8 +39926,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -40409,8 +40303,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -40788,8 +40680,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -41389,61 +41279,14 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
     offset: 0
     size: 0
     path: 
---- !u!1 &1614950898
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1614950900}
-  - component: {fileID: 1614950899}
-  m_Layer: 0
-  m_Name: StageManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1614950899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614950898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0deaffa13d9153341829e70861f2fa2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canvasGroup: {fileID: 0}
-  timeText: {fileID: 0}
-  goalObject: {fileID: 2121034424}
---- !u!4 &1614950900
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614950898}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 522.02, y: 98.445404, z: 813.4664}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618468571
 GameObject:
   m_ObjectHideFlags: 0
@@ -41512,8 +41355,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -41867,8 +41708,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -42246,8 +42085,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -42625,8 +42462,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -42980,8 +42815,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -43448,8 +43281,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -43613,8 +43446,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -43689,8 +43522,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -44044,8 +43875,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -44399,8 +44228,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -44778,8 +44605,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -45222,8 +45047,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1.0000001
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1.0000001
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -45298,8 +45123,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -45692,8 +45515,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -46208,8 +46029,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -46652,8 +46471,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511627
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511627
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -46760,8 +46579,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -47232,8 +47049,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -47397,8 +47214,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511686
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511686
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -47562,8 +47379,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -47727,8 +47544,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -47892,8 +47709,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -48057,8 +47874,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -48148,8 +47965,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -48664,8 +48479,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -49043,8 +48856,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -49398,8 +49209,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -49871,8 +49680,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -49962,8 +49771,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -50478,8 +50285,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -50848,8 +50653,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -51453,8 +51256,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1.0000001
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1.0000001
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -51529,8 +51332,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -51884,8 +51685,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -52255,8 +52054,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -52654,8 +52451,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -53170,8 +52965,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -53246,8 +53041,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -53639,8 +53432,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -54236,8 +54027,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -54312,8 +54103,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -54756,8 +54545,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -54921,8 +54710,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -55086,8 +54875,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -55162,8 +54951,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -55606,8 +55393,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511686
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511686
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -55771,8 +55558,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -55936,8 +55723,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -56169,8 +55956,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -56334,8 +56121,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 0.83511627
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 0.83511627
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -56425,8 +56212,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -56941,8 +56726,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -57252,11 +57035,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2121034424 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2456340012754175374, guid: 6e4ca06b53b95c94fbf6c697ac670bf2, type: 3}
-  m_PrefabInstance: {fileID: 1938014577}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2128852068
 Mesh:
   m_ObjectHideFlags: 0
@@ -57414,8 +57192,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -57490,8 +57268,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -57934,8 +57710,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -58010,8 +57786,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -58770,7 +58544,6 @@ SceneRoots:
   - {fileID: 1938014577}
   - {fileID: 656666595}
   - {fileID: 1934813784}
-  - {fileID: 1614950900}
   - {fileID: 349399055}
   - {fileID: 537225179}
   - {fileID: 1342638505}
