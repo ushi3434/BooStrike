@@ -45,7 +45,7 @@ public class Stage4ManagerScript : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             canvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsedTime / 1.0f);
-            yield return null; // Ÿ‚ÌƒtƒŒ[ƒ€‚Ü‚Å‘Ò‹@
+            yield return null; // æ¬¡ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã¾ã§å¾…æ©Ÿ
         }
 
         canvasGroup.alpha = 0f;

@@ -6,9 +6,9 @@ public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] Vector3 delta;
 
-    [SerializeField] float amplitude; //U•
-    [SerializeField] float speed; //‘¬“x
-    [SerializeField] float offset; //ƒIƒtƒZƒbƒg
+    [SerializeField] float amplitude; //æŒ¯å¹…
+    [SerializeField] float speed; //é€Ÿåº¦
+    [SerializeField] float offset; //ã‚ªãƒ•ã‚»ãƒƒãƒˆ
 
     private Vector3 targetPosition;
 
@@ -21,7 +21,7 @@ public class MovingPlatform : MonoBehaviour
 
     void Update()
     {
-        // ‘«ê‚ðˆÚ“®‚³‚¹‚é
+        // è¶³å ´ã‚’ç§»å‹•ã•ã›ã‚‹
         transform.position = defaultPos + delta * Mathf.Sin(Time.time + offset) * amplitude;
     }
 
@@ -29,7 +29,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            // G‚ê‚½obj‚Ìe‚ðˆÚ“®°‚É‚·‚é
+            // è§¦ã‚ŒãŸobjã®è¦ªã‚’ç§»å‹•åºŠã«ã™ã‚‹
             other.transform.SetParent(transform);
         }
     }
@@ -37,7 +37,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            // G‚ê‚½obj‚Ìe‚ð‚È‚­‚·
+            // è§¦ã‚ŒãŸobjã®è¦ªã‚’ãªãã™
             other.transform.SetParent(null);
         }
     }
